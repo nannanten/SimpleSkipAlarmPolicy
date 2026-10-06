@@ -1,297 +1,526 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description"
+        content="いつものアラームを、必要な日だけ簡単にスキップ。シンプルに使えるアラームアプリ「シンプルスキップアラーム」の公式ページです。">
+
+  <meta name="theme-color" content="#000000">
+
   <title>シンプルスキップアラーム</title>
 
-  <meta name="description"
-
-        content="いつものアラームを、必要な日だけ簡単にスキップ。シンプルに使える目覚ましアプリです。">
-
   <style>
-
     * {
-
       box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-
       margin: 0;
-
+      background: #000000;
+      color: #e8e8e8;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial, sans-serif;
-
-      background: #f5f5f7;
-
-      color: #1d1d1f;
-
-      line-height: 1.7;
-
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* ---------- HERO ---------- */
+
     .hero {
-
-      background: #000;
-
-      color: #fff;
-
+      position: relative;
+      overflow: hidden;
       text-align: center;
-
-      padding: 80px 20px;
-
+      padding: 78px 20px 72px;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(255, 149, 0, 0.12),
+          transparent 38%
+        ),
+        #000000;
+      border-bottom: 1px solid #222222;
     }
 
     .icon {
+      width: 118px;
+      height: 118px;
+      margin: 0 auto 27px;
+      border-radius: 27px;
+      overflow: hidden;
+      box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(255, 149, 0, 0.08);
+    }
 
-      width: 100px;
+    .icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-      height: 100px;
-
-      margin: 0 auto 24px;
-
-      border-radius: 22px;
-
-      background: #1c1c1e;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      font-size: 55px;
-
+    .app-label {
+      margin: 0 0 7px;
+      color: #ff9500;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
     }
 
     .hero h1 {
-
       margin: 0;
-
-      font-size: 36px;
-
+      color: #ffffff;
+      font-size: 38px;
+      line-height: 1.35;
       font-weight: 700;
-
     }
 
-    .hero p {
-
-      margin: 16px auto 0;
-
-      max-width: 600px;
-
-      color: #d2d2d7;
-
+    .hero .lead {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: #c7c7cc;
       font-size: 18px;
-
+      line-height: 1.8;
     }
+
+    .hero .catch {
+      display: inline-block;
+      margin-top: 27px;
+      padding: 9px 17px;
+      color: #ff9f0a;
+      background: rgba(255, 149, 0, 0.09);
+      border: 1px solid rgba(255, 149, 0, 0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ---------- MAIN ---------- */
 
     main {
-
-      max-width: 800px;
-
-      margin: 40px auto;
-
-      padding: 0 20px;
-
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 50px 24px 75px;
     }
 
-    .card {
-
-      background: #fff;
-
-      border-radius: 18px;
-
-      padding: 32px;
-
-      margin-bottom: 24px;
-
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-
+    .intro {
+      margin-bottom: 55px;
     }
 
     h2 {
+      margin: 0 0 20px;
+      color: #ffffff;
+      font-size: 25px;
+      line-height: 1.5;
+    }
 
-      margin-top: 0;
+    .intro h2 span {
+      color: #ff9500;
+    }
 
-      font-size: 24px;
+    p {
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
 
+    strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* ---------- FEATURES ---------- */
+
+    .features-title {
+      margin-bottom: 25px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      margin-bottom: 60px;
     }
 
     .feature {
+      padding: 26px;
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 17px;
+    }
 
-      margin: 22px 0;
-
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 17px;
+      background: rgba(255, 149, 0, 0.12);
+      border-radius: 12px;
+      color: #ff9500;
+      font-size: 21px;
+      font-weight: 700;
     }
 
     .feature h3 {
-
-      margin: 0 0 6px;
-
+      margin: 0 0 8px;
+      color: #ffffff;
       font-size: 18px;
-
     }
 
     .feature p {
-
       margin: 0;
-
-      color: #6e6e73;
-
+      color: #a1a1a6;
+      font-size: 14px;
+      line-height: 1.75;
     }
 
-    a {
+    /* ---------- SKIP EXPLANATION ---------- */
 
-      color: #007aff;
-
-      text-decoration: none;
-
+    .skip-box {
+      margin-bottom: 60px;
+      padding: 30px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 149, 0, 0.12),
+          rgba(255, 149, 0, 0.03)
+        );
+      border: 1px solid rgba(255, 149, 0, 0.3);
+      border-radius: 18px;
     }
 
-    a:hover {
+    .skip-box h2 {
+      color: #ff9500;
+      font-size: 21px;
+    }
 
-      text-decoration: underline;
+    .skip-box p:last-child {
+      margin-bottom: 0;
+    }
 
+    /* ---------- LINKS ---------- */
+
+    .support {
+      padding: 31px;
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 18px;
+    }
+
+    .support h2 {
+      margin-bottom: 8px;
+    }
+
+    .support-description {
+      margin-bottom: 24px;
+      color: #8e8e93;
+      font-size: 14px;
     }
 
     .links {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 18px;
-
+      display: grid;
+      gap: 12px;
     }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      color: #ffffff;
+      background: #1c1c1e;
+      border: 1px solid #303033;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .links a::after {
+      content: "›";
+      color: #ff9500;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .links a:hover {
+      background: #252527;
+      border-color: #444444;
+    }
+
+    .contact {
+      margin-top: 28px;
+      padding-top: 25px;
+      border-top: 1px solid #292929;
+    }
+
+    .contact-title {
+      margin: 0 0 7px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .contact p {
+      margin: 0;
+      color: #8e8e93;
+      font-size: 14px;
+    }
+
+    .contact a {
+      color: #ff9f0a;
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- FOOTER ---------- */
 
     footer {
-
+      padding: 28px 20px 38px;
+      border-top: 1px solid #222222;
       text-align: center;
-
-      padding: 20px 20px 40px;
-
-      color: #6e6e73;
-
+      color: #636366;
       font-size: 13px;
-
     }
 
+    /* ---------- MOBILE ---------- */
+
     @media (max-width: 600px) {
-
       .hero {
+        padding: 58px 20px 55px;
+      }
 
-        padding: 60px 20px;
-
+      .icon {
+        width: 105px;
+        height: 105px;
+        border-radius: 24px;
+        margin-bottom: 24px;
       }
 
       .hero h1 {
-
         font-size: 29px;
-
       }
 
-      .hero p {
-
+      .hero .lead {
+        margin-top: 17px;
         font-size: 16px;
-
       }
 
-      .card {
-
-        padding: 24px;
-
+      .hero .catch {
+        margin-top: 22px;
+        font-size: 13px;
       }
 
+      main {
+        padding: 40px 20px 55px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .intro {
+        margin-bottom: 45px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        margin-bottom: 48px;
+      }
+
+      .feature {
+        padding: 23px;
+      }
+
+      .skip-box {
+        padding: 24px 21px;
+        margin-bottom: 48px;
+      }
+
+      .support {
+        padding: 24px 20px;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
 
-  <section class="hero">
+  <header class="hero">
 
-    <div class="icon">⏰</div>
+    <div class="icon">
+      <img src="app-icon.png"
+           alt="シンプルスキップアラームのアプリアイコン">
+    </div>
+
+    <p class="app-label">SIMPLE SKIP ALARM</p>
 
     <h1>シンプルスキップアラーム</h1>
 
-    <p>
-
-      いつものアラームを、必要な日だけ簡単にスキップ。
-
+    <p class="lead">
+      いつものアラームを、必要な日だけ簡単にスキップ。<br>
       毎日の目覚ましをシンプルに管理できるアラームアプリです。
-
     </p>
 
-  </section>
+    <div class="catch">
+      オフにしない。必要な日だけスキップ。
+    </div>
+
+  </header>
+
 
   <main>
 
-    <section class="card">
+    <section class="intro">
 
-      <h2>いつものアラームを、もっと使いやすく。</h2>
+      <h2>
+        いつものアラームを、<span>もっと使いやすく。</span>
+      </h2>
 
       <p>
-  「明日だけアラームはいらないからオフにしたら、
-  次の日オンに戻すのを忘れてしまった…」
-  そんな経験はありませんか？
-</p>
+        「明日だけアラームはいらないからオフにしたら、
+        次の日にオンへ戻すのを忘れてしまった…」
+        そんな経験はありませんか？
+      </p>
 
-<p>
-  シンプルスキップアラームなら、
-  アラームをオフにしたり削除したりせず、
-  <strong>必要な日だけスキップして鳴らさない</strong>ようにできます。
-</p>
+      <p>
+        シンプルスキップアラームなら、
+        アラームをオフにしたり削除したりせず、
+        <strong>必要な日だけスキップして鳴らさない</strong>
+        ようにできます。
+      </p>
 
-<p>
-  スキップした日が終われば、いつものアラームはそのまま。
-  オンに戻し忘れる心配を減らせます。
-</p>
+      <p>
+        スキップした日が終われば、いつものアラームはそのまま。
+        アラームをオンに戻し忘れる心配を減らせます。
+      </p>
+
+    </section>
+
+
+    <h2 class="features-title">主な機能</h2>
+
+    <section class="features">
+
+      <div class="feature">
+        <div class="feature-icon">››</div>
+
+        <h3>次回だけスキップ</h3>
+
+        <p>
+          繰り返し設定したアラームをオフにせず、
+          次の1回だけスキップできます。
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">✓</div>
 
         <h3>事前にスキップ</h3>
 
         <p>
-
-          アラームを鳴らしたくない日を、あらかじめ設定できます。
-
+          アラームを鳴らしたくない日を、
+          あらかじめ設定しておくことができます。
         </p>
-
       </div>
 
+
       <div class="feature">
+        <div class="feature-icon">↻</div>
+
+        <h3>繰り返し・スヌーズ</h3>
+
+        <p>
+          毎日のアラームとして使いやすい、
+          繰り返し設定やスヌーズ機能に対応します。
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">○</div>
 
         <h3>シンプルな操作</h3>
 
         <p>
-
-          毎日使うものだから、分かりやすく操作しやすいデザインを目指しました。
-
+          毎日使うものだから、
+          分かりやすく操作しやすいデザインを目指しました。
         </p>
-
       </div>
 
     </section>
 
-    <section class="card">
+
+    <section class="skip-box">
+
+      <h2>アラームを「オフ」にしなくていい。</h2>
+
+      <p>
+        休日や予定のある日など、
+        「次だけ鳴らさなくていい」というときのために、
+        スキップ機能を用意しています。
+      </p>
+
+      <p>
+        繰り返しアラームそのものをオフにする必要がないので、
+        翌日以降にオンへ戻し忘れるリスクを減らせます。
+      </p>
+
+    </section>
+
+
+    <section class="support">
 
       <h2>サポート・ポリシー</h2>
 
+      <p class="support-description">
+        サポート情報、プライバシーポリシー、
+        利用規約はこちらから確認できます。
+      </p>
+
       <div class="links">
 
-        <a href="support.html">サポート</a>
+        <a href="support.html">
+          サポート
+        </a>
 
-        <a href="privacy-policy.html">プライバシーポリシー</a>
+        <a href="privacy-policy.html">
+          プライバシーポリシー
+        </a>
 
-        <a href="terms.html">利用規約</a>
+        <a href="terms.html">
+          利用規約
+        </a>
+
+      </div>
+
+
+      <div class="contact">
+
+        <p class="contact-title">お問い合わせ</p>
+
+        <p>
+          <a href="mailto:answersheettomark@gmail.com">
+            answersheettomark@gmail.com
+          </a>
+        </p>
 
       </div>
 
@@ -299,10 +528,9 @@
 
   </main>
 
+
   <footer>
-
-    © 2026 Ryosuke Yamamoto
-
+    © 2026 Simple Skip Alarm
   </footer>
 
 </body>

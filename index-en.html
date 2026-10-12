@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Easily skip your usual alarm only when you need to. Simple Skip Alarm is a simple, easy-to-use alarm app.">
+
+  <meta name="theme-color" content="#000000">
+
+  <title>Simple Skip Alarm</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #000000;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        Arial, sans-serif;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 78px 20px 72px;
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(255, 149, 0, 0.12),
+          transparent 38%
+        ),
+        #000000;
+      border-bottom: 1px solid #222222;
+    }
+
+    .icon {
+      width: 118px;
+      height: 118px;
+      margin: 0 auto 27px;
+      border-radius: 27px;
+      overflow: hidden;
+      box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(255, 149, 0, 0.08);
+    }
+
+    .icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .app-label {
+      margin: 0 0 7px;
+      color: #ff9500;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 38px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .hero .lead {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: #c7c7cc;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .hero .catch {
+      display: inline-block;
+      margin-top: 27px;
+      padding: 9px 17px;
+      color: #ff9f0a;
+      background: rgba(255, 149, 0, 0.09);
+      border: 1px solid rgba(255, 149, 0, 0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ---------- MAIN ---------- */
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 50px 24px 75px;
+    }
+
+    .intro {
+      margin-bottom: 55px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      color: #ffffff;
+      font-size: 25px;
+      line-height: 1.5;
+    }
+
+    .intro h2 span {
+      color: #ff9500;
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
+
+    strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* ---------- FEATURES ---------- */
+
+    .features-title {
+      margin-bottom: 25px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      margin-bottom: 60px;
+    }
+
+    .feature {
+      padding: 26px;
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 17px;
+    }
+
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 17px;
+      background: rgba(255, 149, 0, 0.12);
+      border-radius: 12px;
+      color: #ff9500;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: #a1a1a6;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ---------- SKIP EXPLANATION ---------- */
+
+    .skip-box {
+      margin-bottom: 60px;
+      padding: 30px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 149, 0, 0.12),
+          rgba(255, 149, 0, 0.03)
+        );
+      border: 1px solid rgba(255, 149, 0, 0.3);
+      border-radius: 18px;
+    }
+
+    .skip-box h2 {
+      color: #ff9500;
+      font-size: 21px;
+    }
+
+    .skip-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------- LINKS ---------- */
+
+    .support {
+      padding: 31px;
+      background: #111111;
+      border: 1px solid #292929;
+      border-radius: 18px;
+    }
+
+    .support h2 {
+      margin-bottom: 8px;
+    }
+
+    .support-description {
+      margin-bottom: 24px;
+      color: #8e8e93;
+      font-size: 14px;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      color: #ffffff;
+      background: #1c1c1e;
+      border: 1px solid #303033;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .links a::after {
+      content: "›";
+      color: #ff9500;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .links a:hover {
+      background: #252527;
+      border-color: #444444;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      padding: 28px 20px 38px;
+      border-top: 1px solid #222222;
+      text-align: center;
+      color: #636366;
+      font-size: 13px;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 58px 20px 55px;
+      }
+
+      .icon {
+        width: 105px;
+        height: 105px;
+        border-radius: 24px;
+        margin-bottom: 24px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero .lead {
+        margin-top: 17px;
+        font-size: 16px;
+      }
+
+      .hero .catch {
+        margin-top: 22px;
+        font-size: 13px;
+      }
+
+      main {
+        padding: 40px 20px 55px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .intro {
+        margin-bottom: 45px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        margin-bottom: 48px;
+      }
+
+      .feature {
+        padding: 23px;
+      }
+
+      .skip-box {
+        padding: 24px 21px;
+        margin-bottom: 48px;
+      }
+
+      .support {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+
+    <div class="icon">
+      <img src="SkipAlarm_AppIcon_Final_1024.png"
+           alt="Simple Skip Alarm app icon">
+    </div>
+
+    <p class="app-label">SIMPLE SKIP ALARM</p>
+
+    <h1>Simple Skip Alarm</h1>
+
+    <p class="lead">
+      Easily skip your usual alarm only when you need to.<br>
+      A simple way to manage your everyday alarms.
+    </p>
+
+    <div class="catch">
+      Don't turn it off. Just skip the next one.
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="intro">
+
+      <h2>
+        Your usual alarm, <span>made easier.</span>
+      </h2>
+
+      <p>
+        Have you ever turned off an alarm because you didn't need it the next day,
+        only to forget to turn it back on afterward?
+      </p>
+
+      <p>
+        With Simple Skip Alarm, there's no need to turn off or delete your alarm.
+        <strong>Simply skip it when you don't need it.</strong>
+      </p>
+
+      <p>
+        Once the skipped alarm has passed, your regular schedule stays in place,
+        reducing the chance of forgetting to turn your alarm back on.
+      </p>
+
+    </section>
+
+
+    <h2 class="features-title">Key Features</h2>
+
+    <section class="features">
+
+      <div class="feature">
+        <div class="feature-icon">››</div>
+
+        <h3>Skip the Next Alarm</h3>
+
+        <p>
+          Skip just the next occurrence without turning off your repeating alarm.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">✓</div>
+
+        <h3>Skip in Advance</h3>
+
+        <p>
+          Set an upcoming alarm to be skipped ahead of time when you know you won't need it.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">↻</div>
+
+        <h3>Repeat & Snooze</h3>
+
+        <p>
+          Set repeating alarms for selected days and use snooze when you need a little more time.
+        </p>
+      </div>
+
+
+      <div class="feature">
+        <div class="feature-icon">○</div>
+
+        <h3>Simple to Use</h3>
+
+        <p>
+          A clean, easy-to-understand design made for an alarm you use every day.
+        </p>
+      </div>
+
+    </section>
+
+
+    <section class="skip-box">
+
+      <h2>No need to turn your alarm off.</h2>
+
+      <p>
+        Whether it's a day off or a change in your schedule,
+        the skip feature is there for those times when you don't need
+        your next alarm to go off.
+      </p>
+
+      <p>
+        Because your repeating alarm stays on,
+        you don't have to remember to turn it back on afterward.
+      </p>
+
+    </section>
+
+
+    <section class="support">
+
+      <h2>Support & Policies</h2>
+
+      <p class="support-description">
+        Find support information, our Privacy Policy, and Terms of Use below.
+      </p>
+
+      <div class="links">
+
+        <a href="support-en.html">
+          Support
+        </a>
+
+        <a href="privacy-policy-en.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms-en.html">
+          Terms of Use
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 Simple Skip Alarm
+  </footer>
+
+</body>
+
+</html>

@@ -103,6 +103,33 @@
       font-weight: 600;
     }
 
+    /* ---------- APP STORE BUTTON ---------- */
+
+    .app-store-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ff9500;
+      color: #000000;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .app-store-button:hover {
+      background: #ffad33;
+      transform: translateY(-2px);
+    }
+
+    .app-store-button:active {
+      transform: translateY(0);
+    }
+
     /* ---------- MAIN ---------- */
 
     main {
@@ -327,6 +354,12 @@
         font-size: 13px;
       }
 
+      .app-store-button {
+        margin-top: 25px;
+        padding: 14px 25px;
+        font-size: 15px;
+      }
+
       main {
         padding: 40px 20px 55px;
       }
@@ -366,7 +399,7 @@
 
     <div class="icon">
       <img src="SkipAlarm_AppIcon_Final_1024.png"
-     alt="シンプルスキップアラームのアプリアイコン">
+           alt="シンプルスキップアラームのアプリアイコン">
     </div>
 
     <p class="app-label">SIMPLE SKIP ALARM</p>
@@ -380,6 +413,18 @@
 
     <div class="catch">
       オフにしない。必要な日だけスキップ。
+    </div>
+
+    <div>
+      <a
+        class="app-store-button"
+        href="https://apps.apple.com/us/app/simpleskipalarm/id6820184033"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="シンプルスキップアラームをApp Storeでダウンロード"
+      >
+        App Storeでダウンロード ↗
+      </a>
     </div>
 
   </header>

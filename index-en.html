@@ -103,6 +103,33 @@
       font-weight: 600;
     }
 
+    /* ---------- APP STORE BUTTON ---------- */
+
+    .app-store-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #ff9500;
+      color: #000000;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .app-store-button:hover {
+      background: #ffad33;
+      transform: translateY(-2px);
+    }
+
+    .app-store-button:active {
+      transform: translateY(0);
+    }
+
     /* ---------- MAIN ---------- */
 
     main {
@@ -297,6 +324,12 @@
         font-size: 13px;
       }
 
+      .app-store-button {
+        margin-top: 25px;
+        padding: 14px 25px;
+        font-size: 15px;
+      }
+
       main {
         padding: 40px 20px 55px;
       }
@@ -350,6 +383,18 @@
 
     <div class="catch">
       Don't turn it off. Just skip the next one.
+    </div>
+
+    <div>
+      <a
+        class="app-store-button"
+        href="https://apps.apple.com/us/app/simpleskipalarm/id6820184033"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download Simple Skip Alarm on the App Store"
+      >
+        Download on the App Store ↗
+      </a>
     </div>
 
   </header>
